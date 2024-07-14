@@ -99,7 +99,7 @@ background-color: rgba(0, 0, 0, 0.500);
     top: 25vh;
     left: 25vw;
     background-color: white;
-    display: flex;
+    display: none;
 }
 .textarea_cont{
     width: 75%;
