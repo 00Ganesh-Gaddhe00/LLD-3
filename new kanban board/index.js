@@ -7,6 +7,7 @@ let textarea = document.querySelector('.textarea_cont')
 let ticketmain = document.querySelector('.main_cont')
 
 
+
 let isModalthere = false;
 let isDeleteactive = false;
    
@@ -36,7 +37,8 @@ deleteBtn.addEventListener('click', function(){
 textarea.addEventListener('keydown', function(e){
 //    console.log(e.key)
    if(e.key== "Enter"){
-      createTicket()
+    // console.log(textarea.value)
+      createTicket(textarea.value)
 
        modal.style.display = "none"
        isModalthere = false
@@ -46,13 +48,16 @@ textarea.addEventListener('keydown', function(e){
 
 })
 
+let uid = new ShortUniqueId();
 
-function createTicket(){
+function createTicket(taskText){
+  let id = uid.rnd()
+
   let ticketcont = document.createElement('div')
   ticketcont.className = "ticket_cont"
   ticketcont.innerHTML = `<div class="ticket_color"></div>
-                          <div class="ticket_id">#skjfd</div>
-                   <div class="ticket_text">task or the ticket</div>`
+                          <div class="ticket_id">#${id}</div>
+                   <div class="ticket_text">${taskText}</div>`
 
 //    console.log(ticketcont)    
 
