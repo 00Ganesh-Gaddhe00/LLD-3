@@ -55,7 +55,7 @@ function createTicket(taskText) {
 
    let ticketcont = document.createElement('div')
    ticketcont.className = "ticket_cont"
-   ticketcont.innerHTML = `<div class="ticket_color"></div>
+   ticketcont.innerHTML = `<div class="ticket_color ${selected_color}"></div>
                           <div class="ticket_id">#${id}</div>
                    <div class="ticket_text">${taskText}</div>
                    <div class="lock">
@@ -92,6 +92,22 @@ lock.addEventListener('click', function () {
 
 })
 
+}
+
+let Mfiltercolours = document.querySelectorAll('.modal_color')
+let selected_color = 'red'
+// console.log(Mfiltercolours)
+for(let i=0; i<Mfiltercolours.length; i++){
+   Mfiltercolours[i].addEventListener('click', function(){
+     
+      for(let i=0; i<Mfiltercolours.length; i++){
+         Mfiltercolours[i].classList.remove('active')
+      }
+         
+       Mfiltercolours[i].classList.add('active')
+     
+     selected_color = Mfiltercolours[i].classList[1]   
+   })
 }
 
 

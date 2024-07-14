@@ -80,7 +80,6 @@ background-color: rgba(0, 0, 0, 0.500);
 }
 .ticket_color{
     height: 1.3rem;
-    background-color: rgba(255, 0, 0, 0.500)
 }
 .ticket_id{
     font-size: small;
@@ -132,4 +131,8 @@ background-color: rgba(0, 0, 0, 0.500);
     position: absolute;
     bottom: 1px;
     right: 1px;
+}
+
+.active{
+    border: 3px solid gray;
 }
