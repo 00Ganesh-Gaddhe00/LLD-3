@@ -75,6 +75,7 @@ background-color: rgba(0, 0, 0, 0.500);
     height: 11rem;
     width: 16rem;
     background-color: rgb(225, 236, 248);
+    position: relative;
     
 }
 .ticket_color{
@@ -89,6 +90,7 @@ background-color: rgba(0, 0, 0, 0.500);
 
 .ticket_text{
     margin: 0.8rem;
+    outline: none;
 }
 
 .modal_cont{
@@ -124,4 +126,10 @@ background-color: rgba(0, 0, 0, 0.500);
 .modal_color{
    height: 3rem;
    width: 5rem;
+}
+
+.lock{
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
 }
