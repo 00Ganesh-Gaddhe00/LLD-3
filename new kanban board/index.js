@@ -5,6 +5,8 @@ let modal = document.querySelector('.modal_cont')
 let deleteBtn = document.querySelector(".delete")
 let textarea = document.querySelector('.textarea_cont')
 let ticketmain = document.querySelector('.main_cont')
+// let color = ['red', 'blue', 'green', 'black']
+
 
 
 
@@ -92,6 +94,28 @@ lock.addEventListener('click', function () {
 
 })
 
+let ticketColor = document.querySelector('.ticket_color');
+
+ticketColor.addEventListener('click', function(){
+   let color = ['red', 'blue', 'green', 'black'];
+
+      let currcolor  = ticketColor.classList[1]
+
+      let idx;
+        for(let i=0;i<color.length;i++){
+            if(currcolor == color[i]){
+                idx = i;
+                break;
+            }
+        }
+
+        let nextidx = (idx+1)%color.length;
+        let nextcolour = color[nextidx];
+
+       ticketColor.classList.remove(currcolor);
+       ticketColor.classList.add(nextcolour);
+})
+
 }
 
 let Mfiltercolours = document.querySelectorAll('.modal_color')
@@ -109,6 +133,8 @@ for(let i=0; i<Mfiltercolours.length; i++){
      selected_color = Mfiltercolours[i].classList[1]   
    })
 }
+
+
 
 
 

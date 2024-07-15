@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propogation</title>
+    <style>
+        .grandparent {
+            height: 20rem;
+            width: 20rem;
+            /* border: 2px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 80, 80);
+        }
+
+        .parent {
+            height: 12rem;
+            width: 12rem;
+            /* border: 2px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(122, 85, 255);
+
+        }
+
+        .child {
+            height: 5rem;
+            width: 5rem;
+            /* border: 2px solid black; */
+            background-color: rgb(253, 255, 108);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+</body>
+<script>
+     
+    let grandparent = document.querySelector('.grandparent')
+    let parent = document.querySelector('.parent')
+    let child = document.querySelector('.child')
+
+
+    grandparent.addEventListener('click', function(e){
+           console.log('grandparent is clicked')
+        //    console.log(e)
+
+    },true)
+
+    parent.addEventListener('click', function(){
+           console.log('parent is clicked')
+    },false)
+
+    child.addEventListener('click', function(){
+           console.log('child is clicked')
+    },false)
+
+
+
+</script>
+</html>
