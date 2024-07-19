@@ -7,5 +7,23 @@
 </head>
 <body>
      <div id="root">This root ele: theapp not rendered</div>
-</body>
+
+     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+     <script>
+
+         let heading  = React.createElement('h1', {}, 'heading 1 component')
+
+         let heading2 = React.createElement('h1', { id: 'heading2'}, 'im heading 2 comp')
+
+         let contianer = React.createElement('div',{id:'container'}, [heading, heading2])
+
+         let root = ReactDOM.createRoot(document.getElementById('root'));
+         
+         root.render(contianer)
+
+
+
+     </script>
+    </body>
 </html>
