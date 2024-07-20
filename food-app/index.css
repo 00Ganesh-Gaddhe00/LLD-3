@@ -1,0 +1,81 @@
+body{
+    margin: 0;
+}
+
+.nav{
+
+    height: 5rem;
+    /* border: 2px solid grey; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(183, 190, 197, 0.2) 0px 8px 24px;
+    
+}
+.nav-logo{
+
+  height: 12rem;
+  width: 12rem;
+  margin-left: 2.5rem;
+}
+
+    
+
+.nav-items{
+    width: 30rem;
+    display: flex;
+    margin-right: 7rem;
+    font-size:large;
+    color: rgb(76, 76, 76);
+align-items: center;
+justify-content: space-between;
+  cursor: pointer;
+}
+
+.nav-search > input{
+
+    height: 2rem;
+    width: 15rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(230, 230, 230)
+}
+
+.nav-search > button{
+    /* color: rgb(76, 76, 76); */
+    height: 1.5rem;
+    width: 1.5rem;
+    border: none;
+    font-size: large;
+    color: rgb(141, 141, 141);
+    margin-right: 1rem;
+}
+
+.main{
+    margin-right: 12rem;
+    margin-left: 12rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.main-restCard{
+    height: 18rem;
+    width: 13rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: rgba(211, 211, 211, 0.35) 0px 5px 15px;
+}
+
+.main-restCard > img{
+    width: 100%;
+    height: 50%;
+    object-fit:cover;
+    border-radius:1rem ;
+}
+.main-restCard > div {
+    color: rgb(181, 181, 181);
+    margin-left: 5px;
+}

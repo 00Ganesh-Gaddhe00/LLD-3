@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+}
+
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  display: flex;
+  box-shadow: 0 8px 24px #b7bec533;
+}
+
+.nav-logo {
+  width: 12rem;
+  height: 12rem;
+  margin-left: 2.5rem;
+}
+
+.nav-items {
+  color: #4c4c4c;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  width: 30rem;
+  margin-right: 7rem;
+  font-size: large;
+  display: flex;
+}
+
+.nav-search > input {
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
+  outline: none;
+  width: 15rem;
+  height: 2rem;
+}
+
+.nav-search > button {
+  color: #8d8d8d;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+  font-size: large;
+}
+
+.main {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  display: flex;
+}
+
+.main-restCard {
+  width: 13rem;
+  height: 18rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #d3d3d359;
+}
+
+.main-restCard > img {
+  object-fit: cover;
+  border-radius: 1rem;
+  width: 100%;
+  height: 50%;
+}
+
+.main-restCard > div {
+  color: #b5b5b5;
+  margin-left: 5px;
+}
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
