@@ -1,4 +1,4 @@
-
+import { useState } from 'react'
 import image from './logo2.png'
 
 
@@ -8,6 +8,9 @@ import image from './logo2.png'
 
 
 const Navbar = ()=>{
+
+    const[searchTxt, setsearchTxt] = useState('')
+
     return(
         <div className='nav'>
             <div className='nav-logo'>
@@ -17,7 +20,9 @@ const Navbar = ()=>{
             </div>
             <div className='nav-items'>
             <div className='nav-search'>
-                <input type='text' placeholder='search'/>
+                <input  type='text' placeholder='search' onChange={function(e){
+                    setsearchTxt
+                }}/>
                 <button>Q</button>
 
             </div>

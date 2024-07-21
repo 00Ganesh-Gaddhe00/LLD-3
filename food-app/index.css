@@ -76,6 +76,8 @@ justify-content: space-between;
     border-radius:1rem ;
 }
 .main-restCard > div {
-    color: rgb(181, 181, 181);
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+    color: grey;
     margin-left: 5px;
 }

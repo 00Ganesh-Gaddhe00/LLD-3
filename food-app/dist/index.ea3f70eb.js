@@ -27301,9 +27301,13 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
 var _logo2Png = require("./logo2.png");
 var _logo2PngDefault = parcelHelpers.interopDefault(_logo2Png);
+var _s = $RefreshSig$();
 const Navbar = ()=>{
+    _s();
+    const [searchTxt, setsearchTxt] = (0, _react.useState)("");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "nav",
         children: [
@@ -27317,17 +27321,17 @@ const Navbar = ()=>{
                         src: (0, _logo2PngDefault.default)
                     }, void 0, false, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 15,
+                        lineNumber: 18,
                         columnNumber: 17
                     }, undefined)
                 }, void 0, false, {
                     fileName: "SRC/navBar.js",
-                    lineNumber: 14,
+                    lineNumber: 17,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "SRC/navBar.js",
-                lineNumber: 13,
+                lineNumber: 16,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27338,52 +27342,56 @@ const Navbar = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 type: "text",
-                                placeholder: "search"
+                                placeholder: "search",
+                                onChange: function(e) {
+                                    setsearchTxt;
+                                }
                             }, void 0, false, {
                                 fileName: "SRC/navBar.js",
-                                lineNumber: 20,
+                                lineNumber: 23,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                 children: "Q"
                             }, void 0, false, {
                                 fileName: "SRC/navBar.js",
-                                lineNumber: 21,
+                                lineNumber: 26,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 19,
+                        lineNumber: 22,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: "Sign In [o]"
                     }, void 0, false, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 24,
+                        lineNumber: 29,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: "Cart \\-/"
                     }, void 0, false, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 25,
+                        lineNumber: 30,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "SRC/navBar.js",
-                lineNumber: 18,
+                lineNumber: 21,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "SRC/navBar.js",
-        lineNumber: 12,
+        lineNumber: 15,
         columnNumber: 9
     }, undefined);
 };
+_s(Navbar, "8MGmvX7eLldYqZbiQ7TaVqyePvI=");
 _c = Navbar;
 exports.default = Navbar;
 var _c;
@@ -27394,7 +27402,7 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./logo2.png":"ljSWr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./logo2.png":"ljSWr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27576,89 +27584,91 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _cardRest = require("./Card-rest");
 var _cardRestDefault = parcelHelpers.interopDefault(_cardRest);
+const restaurant = [
+    {
+        "id": "788303",
+        "name": "Wow! Momo",
+        "cloudinaryImageId": "64fd45fd9f44c1737bc446e470bed666",
+        "locality": "Near Shanti Nagar Bus Stop",
+        "areaName": "Shantinagar",
+        "costForTwo": "\u20B9300 for two",
+        "cuisines": [
+            "Tibetan",
+            "Healthy Food",
+            "Asian"
+        ],
+        "avgRating": 4.3
+    },
+    {
+        "id": "440123",
+        "name": "Great Indian Khichdi by EatFit",
+        "cloudinaryImageId": "6e44fd7f1e5cd9967edfe47c10247671",
+        "locality": "Cunnigham road",
+        "areaName": "Vasanth Nagar",
+        "costForTwo": "\u20B9200 for two",
+        "cuisines": [
+            "Home Food",
+            "Indian",
+            "North Indian"
+        ],
+        "avgRating": 4.5
+    },
+    {
+        "id": "534235",
+        "name": "Cheesecake & Co.",
+        "cloudinaryImageId": "b318c0b4bc2169550145ace1d6e791a2",
+        "locality": "Koramangala",
+        "areaName": "Koramangala",
+        "costForTwo": "\u20B9250 for two",
+        "cuisines": [
+            "Bakery"
+        ],
+        "avgRating": 4.6
+    },
+    {
+        "id": "622202",
+        "name": "MOJO Pizza - 2X Toppings",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/24/295f1bfc-237b-4bd4-832b-a23fdf08f8aa_622202.JPG",
+        "locality": "Langford Road",
+        "areaName": "Shantinagar",
+        "costForTwo": "\u20B9250 for two",
+        "cuisines": [
+            "Pizzas",
+            "Italian",
+            "Fast Food"
+        ],
+        "avgRating": 4.5
+    },
+    {
+        "id": "750396",
+        "name": "Daily Kitchen - Homely Meals",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/19/741d7d41-1341-4358-b6e0-cc22b8e82f9a_750396.JPG",
+        "locality": "Lakshmi Road",
+        "areaName": "Langford Road",
+        "costForTwo": "\u20B9400 for two",
+        "cuisines": [
+            "Home Food",
+            "Indian",
+            "North Indian"
+        ],
+        "avgRating": 4.4
+    }
+];
 const Main = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "main",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
+        children: restaurant.map((rest)=>{
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {
+                ...rest
+            }, void 0, false, {
                 fileName: "SRC/main.js",
-                lineNumber: 7,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 9,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 10,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 13,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 14,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 15,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 16,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 17,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 18,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 19,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 20,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {}, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 21,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
+                lineNumber: 90,
+                columnNumber: 28
+            }, undefined);
+        })
+    }, void 0, false, {
         fileName: "SRC/main.js",
-        lineNumber: 6,
+        lineNumber: 87,
         columnNumber: 9
     }, undefined);
 };
@@ -27684,44 +27694,44 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-let image = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/9869efb0-ef0e-41eb-bffa-9d6e03eef55e_432976.JPG";
-function Cardrest() {
+let image = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+function Cardrest({ name, cuisines, cloudinaryImageId, avgRating }) {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "main-restCard",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 alt: "image",
-                src: image
+                src: image + cloudinaryImageId
             }, void 0, false, {
                 fileName: "SRC/Card-rest.js",
-                lineNumber: 8,
+                lineNumber: 13,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: "KFC"
+                children: name
             }, void 0, false, {
                 fileName: "SRC/Card-rest.js",
-                lineNumber: 9,
+                lineNumber: 14,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: "4 stars"
+                children: avgRating
             }, void 0, false, {
                 fileName: "SRC/Card-rest.js",
-                lineNumber: 10,
+                lineNumber: 15,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: "Burgers, FastFood"
+                children: cuisines.join(", ")
             }, void 0, false, {
                 fileName: "SRC/Card-rest.js",
-                lineNumber: 11,
+                lineNumber: 16,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "SRC/Card-rest.js",
-        lineNumber: 7,
+        lineNumber: 12,
         columnNumber: 5
     }, this);
 }

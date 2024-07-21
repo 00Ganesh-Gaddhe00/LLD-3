@@ -70,7 +70,9 @@ body {
 }
 
 .main-restCard > div {
-  color: #b5b5b5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: gray;
   margin-left: 5px;
 }
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
