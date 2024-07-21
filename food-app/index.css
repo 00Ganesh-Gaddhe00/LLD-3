@@ -52,20 +52,23 @@ justify-content: space-between;
 }
 
 .main{
-    margin-right: 12rem;
-    margin-left: 12rem;
+    margin-right: 10rem;
+    margin-left: 10rem;
     margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: space-between;
+    justify-content:space-around
 }
 
 .main-restCard{
     height: 18rem;
-    width: 13rem;
+    width: 14.5rem;
     position: relative;
     overflow: hidden;
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflowing text */
+   
     box-shadow: rgba(211, 211, 211, 0.35) 0px 5px 15px;
 }
 
@@ -77,7 +80,6 @@ justify-content: space-between;
 }
 .main-restCard > div {
     white-space: nowrap;
-    text-overflow: ellipsis; 
     color: grey;
     margin-left: 5px;
 }

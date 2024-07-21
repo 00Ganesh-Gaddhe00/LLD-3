@@ -1,9 +1,10 @@
 import React from "react"
 import Cardrest from "./Card-rest"
+import { useEffect } from "react"
 
 // const restaurant = [
 //     {
-    
+
 //                       "id": "788303",
 //                       "name": "Wow! Momo",
 //                       "cloudinaryImageId": "64fd45fd9f44c1737bc446e470bed666",
@@ -82,17 +83,35 @@ import Cardrest from "./Card-rest"
 
 
 
-const Main = ({restaurant})=>{
-    return(
+const Main = ({ restaurant,setrestList,setFilteredList }) => {
+
+
+  
+    useEffect(() => {
+        // API call
+        getRestaurants();
+      }, []);
+
+      async function getRestaurants() {
+        const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+        const json = await data.json()
+        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+        const list = await json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+       setrestList(list)
+       setFilteredList(list)
+      }
+    
+
+    return (
         <div className="main">
             {
-                restaurant.map((rest)=>{
-                    return <Cardrest {...rest} />
+                restaurant.map((rest) => {
+                    return <Cardrest {...rest.info} key={rest.info.id} />
                 })
 
             }
 
-  </div>
+        </div>
     )
 }
 

@@ -5,11 +5,19 @@ import image from './logo2.png'
 
 
 
+const Navbar = ({restList, setFilteredList})=>{
 
-
-const Navbar = ({restaurant})=>{
-console.log(restaurant[0])
     const[searchTxt, setsearchTxt] = useState('')
+
+    function searchfxn(){
+        const filarr = restList.filter((rest)=>{
+            return rest.name.includes(searchTxt)
+        })
+        setFilteredList(filarr)
+    }
+
+
+    
 
     return(
         <div className='nav'>
@@ -20,10 +28,12 @@ console.log(restaurant[0])
             </div>
             <div className='nav-items'>
             <div className='nav-search'>
-                <input  type='text' placeholder='search' onChange={function(e){
-                    setsearchTxt
+                <input  value={searchTxt} type='text' placeholder='search' onChange={function(e){
+                        // Filterrest(e);
+                        setsearchTxt(e.target.value)
+
                 }}/>
-                <button>Q</button>
+                <button onClick={()=>searchfxn()}>Q</button>
 
             </div>
                 <div>Sign In [o]</div>

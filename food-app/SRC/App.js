@@ -3,24 +3,25 @@ import ReactDOM from 'react-dom/client'
 import image from './logo2.png'
 import Navbar from './navBar'
 import Main from './main'
+import { useState } from 'react'
 
 // const heading = React.createElement('h1', {id:'1'}, 'heading one');
 
 const restaurant = [
     {
-    
-                      "id": "788303",
-                      "name": "Wow! Momo",
-                      "cloudinaryImageId": "64fd45fd9f44c1737bc446e470bed666",
-                      "locality": "Near Shanti Nagar Bus Stop",
-                      "areaName": "Shantinagar",
-                      "costForTwo": "₹300 for two",
-                      "cuisines": [
-                        "Tibetan",
-                        "Healthy Food",
-                        "Asian",
-                      ],
-                      "avgRating": 4.3,
+
+        "id": "788303",
+        "name": "Wow! Momo",
+        "cloudinaryImageId": "64fd45fd9f44c1737bc446e470bed666",
+        "locality": "Near Shanti Nagar Bus Stop",
+        "areaName": "Shantinagar",
+        "costForTwo": "₹300 for two",
+        "cuisines": [
+            "Tibetan",
+            "Healthy Food",
+            "Asian",
+        ],
+        "avgRating": 4.3,
     },
     {
 
@@ -31,9 +32,9 @@ const restaurant = [
         "areaName": "Vasanth Nagar",
         "costForTwo": "₹200 for two",
         "cuisines": [
-          "Home Food",
-          "Indian",
-          "North Indian",
+            "Home Food",
+            "Indian",
+            "North Indian",
         ],
         "avgRating": 4.5,
     },
@@ -46,7 +47,7 @@ const restaurant = [
         "areaName": "Koramangala",
         "costForTwo": "₹250 for two",
         "cuisines": [
-          "Bakery"
+            "Bakery"
         ],
         "avgRating": 4.6,
     },
@@ -59,10 +60,10 @@ const restaurant = [
         "areaName": "Shantinagar",
         "costForTwo": "₹250 for two",
         "cuisines": [
-          "Pizzas",
-          "Italian",
-          "Fast Food",
-                ],
+            "Pizzas",
+            "Italian",
+            "Fast Food",
+        ],
         "avgRating": 4.5,
     },
     {
@@ -74,9 +75,9 @@ const restaurant = [
         "areaName": "Langford Road",
         "costForTwo": "₹400 for two",
         "cuisines": [
-          "Home Food",
-          "Indian",
-          "North Indian",
+            "Home Food",
+            "Indian",
+            "North Indian",
         ],
         "avgRating": 4.4,
     }
@@ -87,19 +88,24 @@ const restaurant = [
 
 
 
-const Footer = ()=>{
-    return(
+const Footer = () => {
+    return (
         <div></div>
     )
 }
 
 
-const App = ()=>{
-    return(
+const App = () => {
+    const [restList, setrestList] = useState([])
+    const [filteredList, setFilteredList] = useState([...restList])
+
+
+
+    return (
         <>
-        <Navbar  restaurant = {restaurant} ></Navbar>
-        <Main restaurant = {restaurant}></Main>
-        <Footer></Footer>
+            <Navbar restList={restList} setFilteredList={setFilteredList} ></Navbar>
+            <Main restaurant={filteredList} setrestList={setrestList} setFilteredList={setFilteredList}></Main>
+            <Footer></Footer>
         </>
     )
 }

@@ -46,16 +46,18 @@ body {
 
 .main {
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 2rem;
   margin-top: 3rem;
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
   display: flex;
 }
 
 .main-restCard {
-  width: 13rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 14.5rem;
   height: 18rem;
   position: relative;
   overflow: hidden;
@@ -71,7 +73,6 @@ body {
 
 .main-restCard > div {
   white-space: nowrap;
-  text-overflow: ellipsis;
   color: gray;
   margin-left: 5px;
 }

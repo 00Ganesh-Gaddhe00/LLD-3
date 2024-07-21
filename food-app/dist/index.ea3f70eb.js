@@ -2963,6 +2963,7 @@ var _navBar = require("./navBar");
 var _navBarDefault = parcelHelpers.interopDefault(_navBar);
 var _main = require("./main");
 var _mainDefault = parcelHelpers.interopDefault(_main);
+var _s = $RefreshSig$();
 // const heading = React.createElement('h1', {id:'1'}, 'heading one');
 const restaurant = [
     {
@@ -3037,42 +3038,51 @@ const restaurant = [
 const Footer = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
         fileName: "SRC/App.js",
-        lineNumber: 92,
+        lineNumber: 93,
         columnNumber: 9
     }, undefined);
 };
 _c = Footer;
 const App = ()=>{
+    _s();
+    const [restList, setrestList] = (0, _react.useState)([]);
+    const [filteredList, setFilteredList] = (0, _react.useState)([
+        ...restList
+    ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBarDefault.default), {
-                restaurant: restaurant
+                restList: restList,
+                setFilteredList: setFilteredList
             }, void 0, false, {
                 fileName: "SRC/App.js",
-                lineNumber: 100,
-                columnNumber: 9
+                lineNumber: 106,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
-                restaurant: restaurant
+                restaurant: filteredList,
+                setrestList: setrestList,
+                setFilteredList: setFilteredList
             }, void 0, false, {
                 fileName: "SRC/App.js",
-                lineNumber: 101,
-                columnNumber: 9
+                lineNumber: 107,
+                columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "SRC/App.js",
-                lineNumber: 102,
-                columnNumber: 9
+                lineNumber: 108,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
+_s(App, "qjfkXEFFdSAliBUzTh4DZTJpv2s=");
 _c1 = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 // root.render(functionalElement())
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "SRC/App.js",
-    lineNumber: 115,
+    lineNumber: 121,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
@@ -27379,10 +27389,15 @@ var _react = require("react");
 var _logo2Png = require("./logo2.png");
 var _logo2PngDefault = parcelHelpers.interopDefault(_logo2Png);
 var _s = $RefreshSig$();
-const Navbar = ({ restaurant })=>{
+const Navbar = ({ restList, setFilteredList })=>{
     _s();
-    console.log(restaurant[0]);
     const [searchTxt, setsearchTxt] = (0, _react.useState)("");
+    function searchfxn() {
+        const filarr = restList.filter((rest)=>{
+            return rest.name.includes(searchTxt);
+        });
+        setFilteredList(filarr);
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "nav",
         children: [
@@ -27396,17 +27411,17 @@ const Navbar = ({ restaurant })=>{
                         src: (0, _logo2PngDefault.default)
                     }, void 0, false, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 18,
+                        lineNumber: 26,
                         columnNumber: 17
                     }, undefined)
                 }, void 0, false, {
                     fileName: "SRC/navBar.js",
-                    lineNumber: 17,
+                    lineNumber: 25,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "SRC/navBar.js",
-                lineNumber: 16,
+                lineNumber: 24,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27416,53 +27431,56 @@ const Navbar = ({ restaurant })=>{
                         className: "nav-search",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                value: searchTxt,
                                 type: "text",
                                 placeholder: "search",
                                 onChange: function(e) {
-                                    setsearchTxt;
+                                    // Filterrest(e);
+                                    setsearchTxt(e.target.value);
                                 }
                             }, void 0, false, {
                                 fileName: "SRC/navBar.js",
-                                lineNumber: 23,
+                                lineNumber: 31,
                                 columnNumber: 17
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: ()=>searchfxn(),
                                 children: "Q"
                             }, void 0, false, {
                                 fileName: "SRC/navBar.js",
-                                lineNumber: 26,
+                                lineNumber: 36,
                                 columnNumber: 17
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 22,
+                        lineNumber: 30,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: "Sign In [o]"
                     }, void 0, false, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 29,
+                        lineNumber: 39,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: "Cart \\-/"
                     }, void 0, false, {
                         fileName: "SRC/navBar.js",
-                        lineNumber: 30,
+                        lineNumber: 40,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "SRC/navBar.js",
-                lineNumber: 21,
+                lineNumber: 29,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "SRC/navBar.js",
-        lineNumber: 15,
+        lineNumber: 23,
         columnNumber: 9
     }, undefined);
 };
@@ -27659,6 +27677,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _cardRest = require("./Card-rest");
 var _cardRestDefault = parcelHelpers.interopDefault(_cardRest);
+var _s = $RefreshSig$();
 // const restaurant = [
 //     {
 //                       "id": "788303",
@@ -27729,24 +27748,41 @@ var _cardRestDefault = parcelHelpers.interopDefault(_cardRest);
 //         "avgRating": 4.4,
 //     }
 // ]
-const Main = ({ restaurant })=>{
+const Main = ({ restaurant, setrestList, setFilteredList })=>{
+    _s();
+    (0, _react.useEffect)(()=>{
+        // API call
+        getRestaurants();
+    }, []);
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        const list = await json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+        setrestList(list);
+        setFilteredList(list);
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "main",
         children: restaurant.map((rest)=>{
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardRestDefault.default), {
-                ...rest
-            }, void 0, false, {
-                fileName: "SRC/main.js",
-                lineNumber: 90,
-                columnNumber: 28
-            }, undefined);
+            return /*#__PURE__*/ (0, _react.createElement)((0, _cardRestDefault.default), {
+                ...rest.info,
+                key: rest.info.id,
+                __source: {
+                    fileName: "SRC/main.js",
+                    lineNumber: 109,
+                    columnNumber: 28
+                },
+                __self: undefined
+            });
         })
     }, void 0, false, {
         fileName: "SRC/main.js",
-        lineNumber: 87,
+        lineNumber: 106,
         columnNumber: 9
     }, undefined);
 };
+_s(Main, "OD7bBpZva5O2jO+Puf00hKivP7c=");
 _c = Main;
 exports.default = Main;
 var _c;
