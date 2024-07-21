@@ -7,8 +7,8 @@ import image from './logo2.png'
 
 
 
-const Navbar = ()=>{
-
+const Navbar = ({restaurant})=>{
+console.log(restaurant[0])
     const[searchTxt, setsearchTxt] = useState('')
 
     return(

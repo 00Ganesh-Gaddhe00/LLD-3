@@ -2964,10 +2964,80 @@ var _navBarDefault = parcelHelpers.interopDefault(_navBar);
 var _main = require("./main");
 var _mainDefault = parcelHelpers.interopDefault(_main);
 // const heading = React.createElement('h1', {id:'1'}, 'heading one');
+const restaurant = [
+    {
+        "id": "788303",
+        "name": "Wow! Momo",
+        "cloudinaryImageId": "64fd45fd9f44c1737bc446e470bed666",
+        "locality": "Near Shanti Nagar Bus Stop",
+        "areaName": "Shantinagar",
+        "costForTwo": "\u20B9300 for two",
+        "cuisines": [
+            "Tibetan",
+            "Healthy Food",
+            "Asian"
+        ],
+        "avgRating": 4.3
+    },
+    {
+        "id": "440123",
+        "name": "Great Indian Khichdi by EatFit",
+        "cloudinaryImageId": "6e44fd7f1e5cd9967edfe47c10247671",
+        "locality": "Cunnigham road",
+        "areaName": "Vasanth Nagar",
+        "costForTwo": "\u20B9200 for two",
+        "cuisines": [
+            "Home Food",
+            "Indian",
+            "North Indian"
+        ],
+        "avgRating": 4.5
+    },
+    {
+        "id": "534235",
+        "name": "Cheesecake & Co.",
+        "cloudinaryImageId": "b318c0b4bc2169550145ace1d6e791a2",
+        "locality": "Koramangala",
+        "areaName": "Koramangala",
+        "costForTwo": "\u20B9250 for two",
+        "cuisines": [
+            "Bakery"
+        ],
+        "avgRating": 4.6
+    },
+    {
+        "id": "622202",
+        "name": "MOJO Pizza - 2X Toppings",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/24/295f1bfc-237b-4bd4-832b-a23fdf08f8aa_622202.JPG",
+        "locality": "Langford Road",
+        "areaName": "Shantinagar",
+        "costForTwo": "\u20B9250 for two",
+        "cuisines": [
+            "Pizzas",
+            "Italian",
+            "Fast Food"
+        ],
+        "avgRating": 4.5
+    },
+    {
+        "id": "750396",
+        "name": "Daily Kitchen - Homely Meals",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/19/741d7d41-1341-4358-b6e0-cc22b8e82f9a_750396.JPG",
+        "locality": "Lakshmi Road",
+        "areaName": "Langford Road",
+        "costForTwo": "\u20B9400 for two",
+        "cuisines": [
+            "Home Food",
+            "Indian",
+            "North Indian"
+        ],
+        "avgRating": 4.4
+    }
+];
 const Footer = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
         fileName: "SRC/App.js",
-        lineNumber: 14,
+        lineNumber: 92,
         columnNumber: 9
     }, undefined);
 };
@@ -2975,19 +3045,23 @@ _c = Footer;
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBarDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navBarDefault.default), {
+                restaurant: restaurant
+            }, void 0, false, {
                 fileName: "SRC/App.js",
-                lineNumber: 22,
+                lineNumber: 100,
                 columnNumber: 9
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {}, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainDefault.default), {
+                restaurant: restaurant
+            }, void 0, false, {
                 fileName: "SRC/App.js",
-                lineNumber: 23,
+                lineNumber: 101,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Footer, {}, void 0, false, {
                 fileName: "SRC/App.js",
-                lineNumber: 24,
+                lineNumber: 102,
                 columnNumber: 9
             }, undefined)
         ]
@@ -2998,7 +3072,7 @@ const root = (0, _clientDefault.default).createRoot(document.getElementById("roo
 // root.render(functionalElement())
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "SRC/App.js",
-    lineNumber: 37,
+    lineNumber: 115,
     columnNumber: 13
 }, undefined));
 var _c, _c1;
@@ -27305,8 +27379,9 @@ var _react = require("react");
 var _logo2Png = require("./logo2.png");
 var _logo2PngDefault = parcelHelpers.interopDefault(_logo2Png);
 var _s = $RefreshSig$();
-const Navbar = ()=>{
+const Navbar = ({ restaurant })=>{
     _s();
+    console.log(restaurant[0]);
     const [searchTxt, setsearchTxt] = (0, _react.useState)("");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "nav",
@@ -27584,77 +27659,77 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _cardRest = require("./Card-rest");
 var _cardRestDefault = parcelHelpers.interopDefault(_cardRest);
-const restaurant = [
-    {
-        "id": "788303",
-        "name": "Wow! Momo",
-        "cloudinaryImageId": "64fd45fd9f44c1737bc446e470bed666",
-        "locality": "Near Shanti Nagar Bus Stop",
-        "areaName": "Shantinagar",
-        "costForTwo": "\u20B9300 for two",
-        "cuisines": [
-            "Tibetan",
-            "Healthy Food",
-            "Asian"
-        ],
-        "avgRating": 4.3
-    },
-    {
-        "id": "440123",
-        "name": "Great Indian Khichdi by EatFit",
-        "cloudinaryImageId": "6e44fd7f1e5cd9967edfe47c10247671",
-        "locality": "Cunnigham road",
-        "areaName": "Vasanth Nagar",
-        "costForTwo": "\u20B9200 for two",
-        "cuisines": [
-            "Home Food",
-            "Indian",
-            "North Indian"
-        ],
-        "avgRating": 4.5
-    },
-    {
-        "id": "534235",
-        "name": "Cheesecake & Co.",
-        "cloudinaryImageId": "b318c0b4bc2169550145ace1d6e791a2",
-        "locality": "Koramangala",
-        "areaName": "Koramangala",
-        "costForTwo": "\u20B9250 for two",
-        "cuisines": [
-            "Bakery"
-        ],
-        "avgRating": 4.6
-    },
-    {
-        "id": "622202",
-        "name": "MOJO Pizza - 2X Toppings",
-        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/24/295f1bfc-237b-4bd4-832b-a23fdf08f8aa_622202.JPG",
-        "locality": "Langford Road",
-        "areaName": "Shantinagar",
-        "costForTwo": "\u20B9250 for two",
-        "cuisines": [
-            "Pizzas",
-            "Italian",
-            "Fast Food"
-        ],
-        "avgRating": 4.5
-    },
-    {
-        "id": "750396",
-        "name": "Daily Kitchen - Homely Meals",
-        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/19/741d7d41-1341-4358-b6e0-cc22b8e82f9a_750396.JPG",
-        "locality": "Lakshmi Road",
-        "areaName": "Langford Road",
-        "costForTwo": "\u20B9400 for two",
-        "cuisines": [
-            "Home Food",
-            "Indian",
-            "North Indian"
-        ],
-        "avgRating": 4.4
-    }
-];
-const Main = ()=>{
+// const restaurant = [
+//     {
+//                       "id": "788303",
+//                       "name": "Wow! Momo",
+//                       "cloudinaryImageId": "64fd45fd9f44c1737bc446e470bed666",
+//                       "locality": "Near Shanti Nagar Bus Stop",
+//                       "areaName": "Shantinagar",
+//                       "costForTwo": "₹300 for two",
+//                       "cuisines": [
+//                         "Tibetan",
+//                         "Healthy Food",
+//                         "Asian",
+//                       ],
+//                       "avgRating": 4.3,
+//     },
+//     {
+//         "id": "440123",
+//         "name": "Great Indian Khichdi by EatFit",
+//         "cloudinaryImageId": "6e44fd7f1e5cd9967edfe47c10247671",
+//         "locality": "Cunnigham road",
+//         "areaName": "Vasanth Nagar",
+//         "costForTwo": "₹200 for two",
+//         "cuisines": [
+//           "Home Food",
+//           "Indian",
+//           "North Indian",
+//         ],
+//         "avgRating": 4.5,
+//     },
+//     {
+//         "id": "534235",
+//         "name": "Cheesecake & Co.",
+//         "cloudinaryImageId": "b318c0b4bc2169550145ace1d6e791a2",
+//         "locality": "Koramangala",
+//         "areaName": "Koramangala",
+//         "costForTwo": "₹250 for two",
+//         "cuisines": [
+//           "Bakery"
+//         ],
+//         "avgRating": 4.6,
+//     },
+//     {
+//         "id": "622202",
+//         "name": "MOJO Pizza - 2X Toppings",
+//         "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/24/295f1bfc-237b-4bd4-832b-a23fdf08f8aa_622202.JPG",
+//         "locality": "Langford Road",
+//         "areaName": "Shantinagar",
+//         "costForTwo": "₹250 for two",
+//         "cuisines": [
+//           "Pizzas",
+//           "Italian",
+//           "Fast Food",
+//                 ],
+//         "avgRating": 4.5,
+//     },
+//     {
+//         "id": "750396",
+//         "name": "Daily Kitchen - Homely Meals",
+//         "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/19/741d7d41-1341-4358-b6e0-cc22b8e82f9a_750396.JPG",
+//         "locality": "Lakshmi Road",
+//         "areaName": "Langford Road",
+//         "costForTwo": "₹400 for two",
+//         "cuisines": [
+//           "Home Food",
+//           "Indian",
+//           "North Indian",
+//         ],
+//         "avgRating": 4.4,
+//     }
+// ]
+const Main = ({ restaurant })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "main",
         children: restaurant.map((rest)=>{
