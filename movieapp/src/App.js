@@ -33,6 +33,7 @@ function App() {
         ></Home>} ></Route>
         <Route path='/watchlist' element={<Watchlist 
          watchlist={watchlist}
+         setwatchlist={setwatchlist}
          handleremovefromWL={handleremovefromWL}
         ></Watchlist>}></Route>
        </Routes>

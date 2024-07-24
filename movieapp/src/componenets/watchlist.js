@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 
 const genreName = {
   28: "Action",
@@ -23,31 +24,53 @@ const genreName = {
 }
 
 function Watchlist({
-  watchlist,
-  handleremovefromWL,
+    watchlist,
+    setwatchlist,
+    handleremovefromWL,
 }) 
 {
+ 
+  const [search, setsearch]= useState("")
+  const [genreList, setgenreList] = useState([])
+
+  useEffect(()=>{
+    let list = watchlist.map((movie)=>genreName[movie.genre_ids[0]])
+    list = new Set(list);
+    setgenreList(['All Genre',...list])
+  },[watchlist])
+
+  function Handleincrease(){
+   const sorted = watchlist.sort((movieA,movieB)=> movieB.vote_average-movieA.vote_average)
+   setwatchlist([...sorted])
+  }
+  function Handledecrease(){
+    const sorted = watchlist.sort((movieA,movieB)=> movieA.vote_average-movieB.vote_average)
+    setwatchlist([...sorted])
+  }
+
+
+
   return (
     <>
      <div className="flex mt-5 justify-center">
-      <div  className="m-4 h-[2.5rem] w-[8rem] bg-blue-400 text-white rounded-xl flex justify-center items-center">All Genre</div>
-      <div  className="m-4 h-[2.5rem] w-[8rem] bg-blue-400 text-white rounded-xl flex justify-center items-center">All Genre</div>
-      <div  className="m-4 h-[2.5rem] w-[8rem] bg-blue-400 text-white rounded-xl flex justify-center items-center">All Genre</div>
-      <div  className="m-4 h-[2.5rem] w-[8rem] bg-blue-400 text-white rounded-xl flex justify-center items-center">All Genre</div>
-      <div  className="m-4 h-[2.5rem] w-[8rem] bg-blue-400 text-white rounded-xl flex justify-center items-center">All Genre</div>
+      {genreList.map((genre)=>{
+        return <div  className="m-4 h-[2.5rem] w-[8rem] bg-blue-400 text-white rounded-xl flex justify-center items-center">{genre}</div>
+      })}
+      
+      
      </div>
 
      <div className="flex justify-center my-5">
-      <input placeholder='Search Movies' className="h-[2.5rem] w-[16rem] bg-gray-100 border-2 border-gray-300 outline-none px-4 text-lg"></input>
+      <input value={search} onChange={(e)=> setsearch(e.target.value)} placeholder='Search Movies' className="h-[2.5rem] w-[16rem] bg-gray-100 border-2 border-gray-300 outline-none px-4 text-lg"></input>
      </div>
      <table className="p-4 w-full text-center">
       <thead className=" bg-gray-100 h-[2rem]">
         <tr>
           <th>Movie</th>
           <th>
-          <span><i className="fa-solid fa-arrow-up"></i></span>
+          <span onClick={Handleincrease}><i className="fa-solid fa-arrow-up"></i></span>
           <span className="mx-2">Ratings</span>
-          <span><i className="fa-solid fa-arrow-down"></i></span>
+          <span onClick={Handledecrease}><i className="fa-solid fa-arrow-down"></i></span>
           </th>
 
           <th>Popularity</th>
@@ -57,7 +80,7 @@ function Watchlist({
       </thead>
       <tbody>
 
-        {watchlist.map((movie)=>{
+        {watchlist.filter((movie)=>movie.title.toLowerCase().includes(search.toLocaleLowerCase())).map((movie)=>{
           return <tr key={movie.id} className=" border-b-2">
           <td className="flex items-center mx-4 py-4"><img className=" rounded-[6rem] rem] w-[6rem]" alt='poster' src={"https://image.tmdb.org/t/p/original/"+ movie.poster_path}></img></td>
           <td>{movie.vote_average}</td>
