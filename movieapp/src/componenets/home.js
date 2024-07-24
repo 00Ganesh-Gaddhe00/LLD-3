@@ -1,11 +1,15 @@
 import React from 'react'
 import Banner from './banner'
 import Trendingmovies from './trendingmovies'
-function Home() {
+function Home({
+  watchlist,
+  setwatchlist,
+  handleremovefromWL
+}) {
   return (
     <>
         <Banner></Banner>
-        <Trendingmovies></Trendingmovies>
+      <Trendingmovies watchlist={watchlist} setwatchlist={setwatchlist} handleremovefromWL={handleremovefromWL}></Trendingmovies>
     </>
   )
 }

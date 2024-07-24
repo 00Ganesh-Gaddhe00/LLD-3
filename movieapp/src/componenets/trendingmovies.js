@@ -7,11 +7,17 @@ import Watchlist from './watchlist'
 
 
 
-function Trendingmovies() {
-     const [watchlist, setwatchlist] = useState([])
+function Trendingmovies({
+  watchlist,
+  setwatchlist,
+  handleremovefromWL
+}) {
+    //  const [watchlist, setwatchlist] = useState([])
 
     const [movies , setMovies] = useState([])
     const [pageNo, setPageno] = useState(1)
+
+    console.log(watchlist)
 
     useEffect(()=>{
      axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=e8f62da5e2126af5d78d9b0d4bc4d1ce&page=${pageNo}`) 
@@ -22,25 +28,27 @@ function Trendingmovies() {
  
     },[pageNo])
 
-    useEffect(()=>{
-      const WatchlistfromLS = JSON.parse(localStorage.getItem('watchlist'))
-      setwatchlist(WatchlistfromLS);
-    },[])
+    // useEffect(()=>{
+    //   const WatchlistfromLS = JSON.parse(localStorage.getItem('watchlist'))
+    //   if(WatchlistfromLS===null) return
+    //   setwatchlist(WatchlistfromLS);
+    // },[])
 
-   function handleaddtoWL(id){
+   function handleaddtoWL(movie){
     const newarr = [...watchlist]
-    newarr.push(id)
+    newarr.push(movie)
     localStorage.setItem('watchlist', JSON.stringify(newarr))
     setwatchlist(newarr)
    }
 
-   function handleremovefromWL(id){
-      const newarr = watchlist.filter((wid)=> wid!==id)
-      localStorage.setItem('watchlist', JSON.stringify(newarr))
+  //  function handleremovefromWL(id){
+  //     const newarr = watchlist.filter((movie)=> movie.id!==id)
+  //     localStorage.setItem('watchlist', JSON.stringify(newarr))
       
-      setwatchlist(newarr)
+  //     setwatchlist(newarr)
 
-   }
+  //  }
+
 
     function handlenext(){
        setPageno(pageNo+1)
@@ -71,6 +79,7 @@ function Trendingmovies() {
                   handleaddtoWL = {handleaddtoWL}
                   handleremovefromWL = {handleremovefromWL}
                   watchlist = {watchlist}
+                  movie={movie}
                 
                 />
              })
