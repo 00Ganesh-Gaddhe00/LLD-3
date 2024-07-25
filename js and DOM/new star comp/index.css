@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+    padding-top: 8rem;
+    
+}
+.star-cont{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+
+}
+
+.star{
+    cursor: pointer;
+}
+
+.active{
+    color: gold;
+}

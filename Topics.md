@@ -1,4 +1,4 @@
-
+* NodeList
 * Event propogation
 * Event Bubling
 * Event capturing
@@ -7,7 +7,9 @@
 * first rendering is called mount/mountinf. after subsequent render is called updating
 * why custom hooks- reusable, redable, more testable, maintable, debuggable, modularity
 * lazy loading, chunking, code splitting, dynamic import, on demand loading
-* 
+* react life cycle - the life cycle of a component refers to a series of phases it goes through from its creation (readable function component code to a visble UI component) to its destruction (removing or vanishing from the UI), 
+-and these phase are differenciate into mountingphase
+ and these life cycle methods comes in if we want to perfrom some operation in between these phase.
 ////react
 * congif driven UI - UI gets renders based on the data fetched
  state variable - if a variable is changed by other component since we are use function components functions only work when we called, the vraiable in other component might not work

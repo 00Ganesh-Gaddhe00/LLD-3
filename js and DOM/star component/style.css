@@ -1,0 +1,18 @@
+.star_cont{
+    display: flex;
+    font-size: 2rem;
+}
+
+.star{
+    cursor: pointer;
+}
+
+.active{
+    color: gold;
+}
+body{
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+     align-items: center;
+}
