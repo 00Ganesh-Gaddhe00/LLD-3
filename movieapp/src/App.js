@@ -6,6 +6,7 @@ import Navbar from './componenets/navbar'
 import { useState, useEffect } from 'react';
 
 function App() {
+
   const [watchlist, setwatchlist] = useState([])
 
   useEffect(()=>{

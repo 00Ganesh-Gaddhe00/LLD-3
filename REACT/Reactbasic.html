@@ -12,18 +12,20 @@
      <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
      <script>
 
-         let heading  = React.createElement('h1', {}, 'heading 1 component')
+         let heading  = React.createElement('h1', {headingstrng1}, 'heading 1 component')
 
-         let heading2 = React.createElement('h1', { id: 'heading2'}, 'im heading 2 comp')
+         let heading2 = React.createElement('h1', { id: 'heading2', headingstrng2
+         }, 'im heading 2 comp')
 
-         let contianer = React.createElement('div',{id:'container'}, [heading, heading2])
+         let contianer = React.createElement('div',{id:'container'}, [heading('heading1'), heading2('heading2')])
 
          let root = ReactDOM.createRoot(document.getElementById('root'));
          
+         console.log(contianer)
          root.render(contianer)
 
-
-
+   <h1><h1>
+      
      </script>
     </body>
 </html>

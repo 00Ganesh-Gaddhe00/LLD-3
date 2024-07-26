@@ -69,6 +69,7 @@ function Trendingmovies({
     <div className="text-center font-bold text-2xl	 mt-7 ">Trending Movies</div>
  
     <div className="flex flex-wrap	p-4 gap-6 justify-around" >
+    
          {
              movies.map((movie)=>{
                 return <Moviecard   

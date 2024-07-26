@@ -6,6 +6,7 @@ function Home({
   setwatchlist,
   handleremovefromWL
 }) {
+
   return (
     <>
         <Banner></Banner>
