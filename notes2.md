@@ -14,6 +14,9 @@
 
 ---------------------------------------------
 
+* list the steps that the React takes to converts JSX into the actual output for the browser, ignoring all the internal optimization steps
+- 
+
 n React JS, the main difference between props and state is that the props are a way to pass the data or properties from one component to other components while the state is the real-time data available to use within that only component.
 
 
