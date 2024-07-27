@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const object = {
+
+            type: 'div',
+            props: {
+                children: [{ type: 'h1', props: { children: 'this is' } },
+                {
+                    type: 'p', props: {
+                        class: 'paragraph', children: ['a', {
+                            type: (props) => ({
+                                type: 'button', props: { children: props.counter + 'clicks' }
+                            }), props: { counter: 1 }
+                        },
+                            'from'
+                        ]
+                    }
+                }
+                ]
+            }
+        }
+
+  function render(obj){
+      if(typeof obj=== 'string'){
+        return document.createTextNode(obj)
+      }
+
+      if(typeof obj.type === 'function'){
+        return render(obj.type(obj.props))
+      }
+
+       const element =  document.createElement(obj.type)
+
+      if(obj.props){
+        for(const[key, value] of Object.entries(obj.props)){
+            if(key==='children'){  
+                continue;      
+            }
+            element.setAttribute(key,value);
+
+        }
+      }
+
+    if(obj.props && obj.props.children){
+        const children = Array.isArray(obj.props.children)? obj.props.children:[obj.props.children];
+         
+       children.forEach((child)=>{
+           element.appendChild(render(child))
+       })
+    }
+       return element
+
+  }
+
+
+  const element = render(object)
+  const body = document.querySelector('body')
+  body.appendChild(element)
+
+// function render(obj) {
+//     // Handle text nodes directly
+//     if (typeof obj === 'string') {
+//         return document.createTextNode(obj);
+//     }
+
+//     // Handle functional components
+//     if (typeof obj.type === 'function') {
+//         return render(obj.type(obj.props));
+//     }
+
+//     // Create element for the given type
+//     const element = document.createElement(obj.type);
+
+//     // Set attributes, if any
+//     if (obj.props) {
+//         for (const [key, value] of Object.entries(obj.props)) {
+//             if (key === 'children') {
+//                 // Children will be processed later
+//                 continue;
+//             }
+//             element.setAttribute(key, value);
+//         }
+//     }
+
+//     // Recursively render children
+//     if (obj.props && obj.props.children) {
+//         const children = Array.isArray(obj.props.children) ? obj.props.children : [obj.props.children];
+//         children.forEach(child => {
+//             element.appendChild(render(child));
+//         });
+//     }
+
+//     return element;
+// }
+
+// Usage example
+// const rootElement = render(object);
+// document.body.appendChild(rootElement);
+
+    </script>
+
+
+
+
+</body>
+
+</html>
