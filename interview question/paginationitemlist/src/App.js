@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Table from './table';
 
 
 
@@ -38,53 +39,86 @@ const items = [{id:1, name: 'item1'},
 
 ]
 
+const data = [
+  {
+    "id": 2,
+    "name": "Bob",
+    "rating": 3.8
+  },
+  {
+    "id": 1,
+    "name": "Alice",
+    "rating": 4.5
+  },
+  {
+    "id": 4,
+    "name": "David",
+    "rating": 3.9
+  },
+  {
+    "id": 5,
+    "name": "Eve",
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "rating": 4.2
+  },
+]
+
 const itemsperpage = 4;
 
 
 function App() {
 
 
-const [pageNo, setpageNo] = useState(1)
-
-const pageitems = [];
-const start = pageNo*itemsperpage - itemsperpage
-const end = ((start+itemsperpage)>items.length)? items.length : (start+itemsperpage)
-
-for(let i=start; i<end; i++){
-   pageitems.push(items[i])
-}
-
-function handledecrease(){
-  
-  if(pageNo>1){
-    setpageNo(pageNo-1)
-  }
-
-}
-
-function handleincrease(){
-  
-  if(pageNo<items.length/itemsperpage){
-    setpageNo(pageNo+1)
-  }
-
-}
-
   return (
-    <div className="App">
-      <div>
-        {pageitems.map((item)=>{
-          return <div key={item.id}>{item.name}</div>
-        })}
-      </div>
-      <div className='pagination'>
-        <span onClick={handledecrease}>&laquo;</span>
-        <span>{pageNo}</span>
-        <span onClick={handleincrease}>&raquo;</span>
-
-      </div>
+    <div>
+     <Table data={data} ></Table>
     </div>
-  );
+  )
+// const [pageNo, setpageNo] = useState(1)
+
+// const pageitems = [];
+// const start = pageNo*itemsperpage - itemsperpage
+// const end = ((start+itemsperpage)>items.length)? items.length : (start+itemsperpage)
+
+// for(let i=start; i<end; i++){
+//    pageitems.push(items[i])
+// }
+
+// function handledecrease(){
+  
+//   if(pageNo>1){
+//     setpageNo(pageNo-1)
+//   }
+
+// }
+
+// function handleincrease(){
+  
+//   if(pageNo<items.length/itemsperpage){
+//     setpageNo(pageNo+1)
+//   }
+
+// }
+
+//   return (
+//     <div className="App">
+//       <div>
+//         {pageitems.map((item)=>{
+//           return <div key={item.id}>{item.name}</div>
+//         })}
+//       </div>
+//       <div className='pagination'>
+//         <span onClick={handledecrease}>&laquo;</span>
+//         <span>{pageNo}</span>
+//         <span onClick={handleincrease}>&raquo;</span>
+
+//       </div>
+//     </div>
+//   );
 }
 
 export default App;
