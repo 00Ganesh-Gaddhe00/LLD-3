@@ -13,6 +13,8 @@
 ////react
 * congif driven UI - UI gets renders based on the data fetched
  state variable - if a variable is changed by other component since we are use function components functions only work when we called, the vraiable in other component might not work
+
+ https://github.com/mohd-aman/webDevMorn/tree/main/module2/kanbanBoard
 --------------------------------------------------------
 
 * the DOM object provides the modules or API that can be accessed using javascript to manupilate Document dynamically 

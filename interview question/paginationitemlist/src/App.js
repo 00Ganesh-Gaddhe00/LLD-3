@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Table from './table';
-
+import Timer from './timer';
 
 
 const items = [{id:1, name: 'item1'},
@@ -75,7 +75,8 @@ function App() {
 
   return (
     <div>
-     <Table data={data} ></Table>
+     {/* <Table data={data} ></Table> */}
+     <Timer></Timer>
     </div>
   )
 // const [pageNo, setpageNo] = useState(1)
