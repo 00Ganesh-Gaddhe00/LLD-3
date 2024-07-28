@@ -3,19 +3,22 @@ import Moviecard from './moviecard'
 import { useState } from 'react'
 import axios from 'axios'
 import Pagination from './pagination'
-import Watchlist from './watchlist'
+import { useContext } from 'react'
+import { movieContext } from './movieContex'
 
 
 
-function Trendingmovies({
-  watchlist,
-  setwatchlist,
-  handleremovefromWL
-}) {
+function Trendingmovies(
+  // watchlist,
+  // setwatchlist,
+  // handleremovefromWL
+) {
+
+  const{pageNo, watchlist, setwatchlist} = useContext(movieContext)
     //  const [watchlist, setwatchlist] = useState([])
 
     const [movies , setMovies] = useState([])
-    const [pageNo, setPageno] = useState(1)
+    // const [pageNo, setPageno] = useState(1)
 
     console.log(watchlist)
 
@@ -50,16 +53,16 @@ function Trendingmovies({
   //  }
 
 
-    function handlenext(){
-       setPageno(pageNo+1)
-    }
+    // function handlenext(){
+    //    setPageno(pageNo+1)
+    // }
 
-    function handleprev(){
-        if (pageNo>1){
-            setPageno(pageNo-1)
+    // function handleprev(){
+    //     if (pageNo>1){
+    //         setPageno(pageNo-1)
 
-        }
-    }
+    //     }
+    // }
     console.log(watchlist)
 
 // console.log(movies)
@@ -77,10 +80,8 @@ function Trendingmovies({
                   movieid = {movie.id}
                   posterpath={movie.poster_path}
                   movietitle={movie.title}
-                  handleaddtoWL = {handleaddtoWL}
-                  handleremovefromWL = {handleremovefromWL}
-                  watchlist = {watchlist}
                   movie={movie}
+                  handleaddtoWL = {handleaddtoWL}
                 
                 />
              })
@@ -89,10 +90,6 @@ function Trendingmovies({
 
     </div>
     <Pagination
-      pageNo = {pageNo}
-      handlenext = {handlenext}
-      handleprev = {handleprev}
-
     ></Pagination>
 </>
 )

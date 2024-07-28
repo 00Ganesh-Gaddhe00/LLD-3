@@ -1,4 +1,7 @@
 import React from 'react'
+import { useContext } from 'react'
+import { movieContext } from './movieContex'
+
 
 
 
@@ -7,11 +10,11 @@ function Moviecard({
     posterpath,
     movietitle,
     movieid,
-    handleaddtoWL,
-    handleremovefromWL,
-    watchlist,
-    movie
+    movie,
+    handleaddtoWL
 }) {
+
+const  {handleremovefromWL, watchlist} = useContext(movieContext)
 
   function iscontain(id){
     for(let i=0; i<watchlist.length; i++){

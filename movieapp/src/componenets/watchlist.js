@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { useContext } from 'react'
+import { movieContext } from './movieContex'
 
 const genreName = {
   28: "Action",
@@ -23,12 +25,14 @@ const genreName = {
   37: "Western",
 }
 
-function Watchlist({
-    watchlist,
-    setwatchlist,
-    handleremovefromWL,
-}) 
+function Watchlist(
+    // watchlist,
+    // setwatchlist,
+    // handleremovefromWL,
+) 
 {
+
+  const {watchlist, setwatchlist, handleremovefromWL} = useContext(movieContext)
  
   const [search, setsearch]= useState("")
   const [genreList, setgenreList] = useState([])
