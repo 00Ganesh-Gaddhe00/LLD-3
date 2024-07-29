@@ -1,27 +1,73 @@
 import React from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 function Timer() {
 
-
-const milsec = '08'
-const minutes = '22'
-const seconds = '23'
-
-
+const [isRunning, setisRunning] = useState(false);
+const [elapsedTime, setelapsedTime] = useState(0)
+const intervalIdRef = useRef(null);
+const startTimeRef = useRef(0)
 
 
+useEffect(()=>{
+ if(isRunning){
+ intervalIdRef.current = setInterval(() => {
+    setelapsedTime(Date.now()- startTimeRef.current)
+  }, 10);
+ }
 
-  return (
-    <>
-    <h1>{minutes} : {seconds} : {milsec}</h1>
-    <div className='buttons'>
+ return ()=>{
+  clearInterval(intervalIdRef.current)
+ }
 
-        <button>Start</button>
-        <button>Stop</button>
-        <button>Reset</button>
+},[isRunning])
+
+function start(){
+ setisRunning(true);
+ startTimeRef.current = Date.now() - elapsedTime;
+ console.log(startTimeRef.current)
+}
+
+function stop(){
+ setisRunning(false)
+ console.log('stop')
+ console.log(isRunning)
+}
+
+function reset(){
+setelapsedTime(0)
+setisRunning(false)
+}
+
+function formatTime(){
+  let hours = Math.floor(elapsedTime/(1000*60*60))
+  let minutes = Math.floor(elapsedTime/(1000*60)%60);
+  let seconds = Math.floor(elapsedTime/(1000)%60)
+  let milliseconds = Math.floor((elapsedTime%1000)/100)
+
+  minutes = String(minutes).padStart(2,'0')
+  seconds = String(seconds).padStart(2,'0')
+  milliseconds = String(milliseconds).padStart(2,'0')
+
+  
+
+return `${minutes}:${seconds}:${milliseconds}`
+}
+
+
+
+ return (
+    <div className='stopwatch'>
+      <div className='display'>{formatTime()}</div>
+      <div className='controls'>
+        <button onClick={start} className='start-button'>start</button>
+        <button onClick={stop} className='stop-button'>stop</button>
+        <button onClick={reset} className='reset-button'>reset</button>
+
+
+      </div>
 
     </div>
-    </>
   )
 }
 
