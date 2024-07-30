@@ -75,57 +75,58 @@ const itemsperpage = 4;
 function App() {
 
 
+  // return (
+  //   <div>
+  //    {/* <Table data={data} ></Table> */}
+  //    {/* <Mytimer></Mytimer> */}
+  //    {/* <Timer></Timer> */}
+  //    {/* <Todo></Todo> */}
+  //    {/* <List></List> */}
+
+  //   </div>
+  // )
+  
+const [pageNo, setpageNo] = useState(1)
+
+const pageitems = [];
+const start = pageNo*itemsperpage - itemsperpage
+const end = ((start+itemsperpage)>items.length)? items.length : (start+itemsperpage)
+
+for(let i=start; i<end; i++){
+   pageitems.push(items[i])
+}
+
+function handledecrease(){
+  
+  if(pageNo>1){
+    setpageNo(pageNo-1)
+  }
+
+}
+
+function handleincrease(){
+  
+  if(pageNo<items.length/itemsperpage){
+    setpageNo(pageNo+1)
+  }
+
+}
+
   return (
-    <div>
-     {/* <Table data={data} ></Table> */}
-     {/* <Mytimer></Mytimer> */}
-     {/* <Timer></Timer> */}
-     {/* <Todo></Todo> */}
-     <List></List>
+    <div className="App">
+      <div>
+        {pageitems.map((item)=>{
+          return <div key={item.id}>{item.name}</div>
+        })}
+      </div>
+      <div className='pagination'>
+        <span onClick={handledecrease}>&laquo;</span>
+        <span>{pageNo}</span>
+        <span onClick={handleincrease}>&raquo;</span>
 
+      </div>
     </div>
-  )
-// const [pageNo, setpageNo] = useState(1)
-
-// const pageitems = [];
-// const start = pageNo*itemsperpage - itemsperpage
-// const end = ((start+itemsperpage)>items.length)? items.length : (start+itemsperpage)
-
-// for(let i=start; i<end; i++){
-//    pageitems.push(items[i])
-// }
-
-// function handledecrease(){
-  
-//   if(pageNo>1){
-//     setpageNo(pageNo-1)
-//   }
-
-// }
-
-// function handleincrease(){
-  
-//   if(pageNo<items.length/itemsperpage){
-//     setpageNo(pageNo+1)
-//   }
-
-// }
-
-//   return (
-//     <div className="App">
-//       <div>
-//         {pageitems.map((item)=>{
-//           return <div key={item.id}>{item.name}</div>
-//         })}
-//       </div>
-//       <div className='pagination'>
-//         <span onClick={handledecrease}>&laquo;</span>
-//         <span>{pageNo}</span>
-//         <span onClick={handleincrease}>&raquo;</span>
-
-//       </div>
-//     </div>
-//   );
+  );
 }
 
 export default App;

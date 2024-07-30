@@ -51,6 +51,35 @@ what are hooks: Hooks are functions/methods that allow us to use React features 
   - it can store the reference to real DOM element and can manuplate the dom if we have the reference with js like vanella js but does cause the rerender.
   - 
 
+ * usememo :  The useMemo hook in React is used to optimize the performance of your application by memoizing the result of a computation. This means that useMemo will only recompute the memoized value when one of its dependencies has changed. If the dependencies do not change, useMemo will return the cached value from the previous render, avoiding unnecessary recalculations.
+  When to Use useMemo:
+  - Expensive Calculations: 
+  - Referential Equality: Consider a scenario where you pass an object to a child component, and you want to avoid re-renders of the child component when the object hasn't changed.
+
+* memoization : Memoization is a performance optimization technique used to improve the efficiency of function calls by caching the results of expensive function computations and reusing those cached results when the same inputs occur again
+  -  How Memoization Works
+     1. Store Results: When a function is called with certain inputs, the result of the computation is stored in a cache (usually an object  or a map) using the inputs as the key.
+     2. Check Cache: On subsequent calls with the same inputs, the function first checks the cache to see if the result for those inputs is already stored.
+     3. Return Cached Result: If the result is found in the cache, it is returned immediately without re-executing the computation.
+     4. Compute and Cache: If the result is not found in the cache, the function computes the result, stores it in the cache, and then returns it.
+  
+  -  Differences in Usage
+     - useMemo: Primarily used for memoizing any computed value, including objects, arrays, or primitive values.
+     - useCallback: Specifically used for memoizing functions.
+
+      
+
+   . Internal Implementation
+     Internally, both useMemo and useCallback work similarly:
+
+     * useMemo: 
+              - Takes a function that returns a value and a list of dependencies.
+              - Caches the result of the function.
+              -  Returns the cached result unless the dependencies change.
+    
+    * useCallback:
+              - Takes a function and a list of dependencies.
+              - Returns a memoized version of the function that only changes if one of the dependencies has changed.
   -----------------------------------------------------------------------------------------------------------------------
 
  * debouncing : debouncing is a technique used to control the frequency of function execution, particularly in response to user events such as keystrokes, mouse movements, or resizing. By delaying the execution of a function until a certain amount of time has passed since the last event, debouncing helps in optimizing performance and improving user experience.

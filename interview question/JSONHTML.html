@@ -29,8 +29,9 @@
             }
         }
 
-  function render(obj){
-      if(typeof obj=== 'string'){
+
+function render(obj){
+      if( typeof obj==='string'){
         return document.createTextNode(obj)
       }
 
@@ -38,33 +39,76 @@
         return render(obj.type(obj.props))
       }
 
-       const element =  document.createElement(obj.type)
+      const element = document.createElement(obj.type)
 
-      if(obj.props){
-        for(const[key, value] of Object.entries(obj.props)){
-            if(key==='children'){  
-                continue;      
-            }
-            element.setAttribute(key,value);
+       if(obj.props){
+          for( const [key, value] of Object.entries(obj.props)){
+              if(key!== 'children'){
+                element.setAttribute(key, value)
+              }
+          }
 
-        }
-      }
+       }
 
-    if(obj.props && obj.props.children){
-        const children = Array.isArray(obj.props.children)? obj.props.children:[obj.props.children];
-         
-       children.forEach((child)=>{
-           element.appendChild(render(child))
-       })
-    }
+       if(obj.props && obj.props.children){
+
+        let children =  Array.isArray(obj.props.children)? obj.props.children : [obj.props.children]
+
+
+         for(let i=0; i<children.length; i++){
+            let innerele = render(children[i])
+            element.appendChild(innerele)
+         }
+       }
+
        return element
 
-  }
+}
 
 
-  const element = render(object)
-  const body = document.querySelector('body')
-  body.appendChild(element)
+let body = document.querySelector('body')
+let element = render(object)
+body.appendChild(element)
+
+
+
+
+//   function render(obj){
+//       if(typeof obj=== 'string'){
+//         return document.createTextNode(obj)
+//       }
+
+//       if(typeof obj.type === 'function'){
+//         return render(obj.type(obj.props))
+//       }
+
+//        const element =  document.createElement(obj.type)
+
+//       if(obj.props){
+//         for(const[key, value] of Object.entries(obj.props)){
+//             if(key==='children'){  
+//                 continue;      
+//             }
+//             element.setAttribute(key,value);
+
+//         }
+//       }
+
+//     if(obj.props && obj.props.children){
+//         const children = Array.isArray(obj.props.children)? obj.props.children:[obj.props.children];
+         
+//        children.forEach((child)=>{
+//            element.appendChild(render(child))
+//        })
+//     }
+//        return element
+
+//   }
+
+
+//   const element = render(object)
+//   const body = document.querySelector('body')
+//   body.appendChild(element)
 
 // function render(obj) {
 //     // Handle text nodes directly
