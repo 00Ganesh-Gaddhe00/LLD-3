@@ -2,6 +2,10 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 
+
+
+
+
 function Banner() {
 const [movieObj, setmovieObj] = useState(null)
 
