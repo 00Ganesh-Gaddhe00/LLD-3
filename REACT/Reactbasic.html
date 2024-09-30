@@ -12,19 +12,59 @@
      <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
      <script>
 
-         let heading  = React.createElement('h1', {headingstrng1}, 'heading 1 component')
+        //  let heading  = React.createElement('h1', {}, 'heading 1 component')
 
-         let heading2 = React.createElement('h1', { id: 'heading2', headingstrng2
-         }, 'im heading 2 comp')
+        //  let heading2 = React.createElement('h1', { id: 'heading2'}, 'im heading 2 comp')
 
-         let contianer = React.createElement('div',{id:'container'}, [heading('heading1'), heading2('heading2')])
+        //  let contianer = React.createElement('div',{id:'container'}, [heading, heading2])
 
-         let root = ReactDOM.createRoot(document.getElementById('root'));
+        //  let root = ReactDOM.createRoot(document.getElementById('root'));
          
-         console.log(contianer)
-         root.render(contianer)
+        //  console.log(contianer)
+        //  root.render(contianer)
 
-   <h1><h1>
+    //    ---------------------------------------------------------------------------------------------------------
+
+function UserCard(props) {
+  return React.createElement(
+    'div',
+    { className: 'user-card' },
+    React.createElement('img', { 
+      src: props.profilePicture, 
+      alt: `${props.name}'s profile`, 
+      className: 'profile-picture' 
+    }),
+    React.createElement('h2', null, props.name),
+    React.createElement('p', null, `Age: ${props.age}`)
+  );
+}
+
+function App() {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(UserCard, {
+      name: 'John Doe',
+      age: 30,
+      profilePicture: 'https://example.com/john-doe.jpg'
+    }),
+    React.createElement(UserCard, {
+      name: 'Jane Smith',
+      age: 25,
+      profilePicture: 'https://example.com/jane-smith.jpg'
+    })
+  );
+}
+
+//    console.log(App())
+   console.log(UserCard({name:"garath", age:30, profilePicture:'https://example.com/jane-smith.jpg'}))
+
+ 
+     let root = ReactDOM.createRoot(document.getElementById('root'));
+     root.render(App())
+
+     
+
       
      </script>
     </body>

@@ -8,7 +8,7 @@
 * why custom hooks- reusable, redable, more testable, maintable, debuggable, modularity
 * lazy loading, chunking, code splitting, dynamic import, on demand loading
 * react life cycle - the life cycle of a component refers to a series of phases it goes through from its creation (readable function component code to a visble UI component) to its destruction (removing or vanishing from the UI), 
--and these phase are differenciate into mountingphase
+-and these phase are differenciate into mountingphase 
  and these life cycle methods comes in if we want to perfrom some operation in between these phase.
 ////react
 * congif driven UI - UI gets renders based on the data fetched

@@ -60,7 +60,7 @@ function UserCard({ name, age, profilePicture }) {
   );
 }
 
-export default UserCard;
+// export default UserCard;
 
 
 import React from 'react';

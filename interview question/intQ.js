@@ -64,7 +64,7 @@ const UserProfile = ({userId})=>{
     const fetchDataCallback  = useCallback(()=>{
 
         //Fetch user data from API using userId
-        fetchDataCallback(userId)
+        fetchData(userId)
         .then((data)=>{
             //Handle the fetched data
             handleData(data);
