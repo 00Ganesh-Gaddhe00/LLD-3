@@ -14,10 +14,11 @@
 
 
 
-//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 
 
 * In a production web application, the package.json file and the node_modules directory are not shipped to the client's browser. Instead, the process typically involves the following steps:
+
 
 Development Environment:
 

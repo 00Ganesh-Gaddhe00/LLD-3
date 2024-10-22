@@ -2,6 +2,10 @@ https://javascript.info/bubbling-and-capturing#:~:text=The%20standard%20DOM%20Ev
 
 
 
+its the behavoiur of the event that are attached in the hirarchy of DOM element , its consist of two phases capurting and bubling
+
+by default its bubbling
+
 * the browser traverse from the root of the tree to the target element that the event happend
 to fill the properties or created obekect it traverse from root object to the target element, the object contains all these detials
 
@@ -58,7 +62,7 @@ In the backend of event propagation, several key processes occur within the brow
     // Event listener for capturing phase on the parent
     document.getElementById('parent').addEventListener('click', (event) => {
       console.log('Parent clicked (capturing phase)');
-    }, true);
+    });
 
     // Event listener for the target element
     document.getElementById('child').addEventListener('click', (event) => {
