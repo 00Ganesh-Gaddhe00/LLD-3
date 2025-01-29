@@ -5,6 +5,7 @@ import Timer from './timer';
 import Mytimer from './Mytimer';
 import Todo from './todo';
 import List from './transtion';
+import Pagination from './pagination';
 
 const items = [{id:1, name: 'item1'},
                {id:2, name: 'item2'},
@@ -77,8 +78,9 @@ function App() {
 
   return (
     <div>
-     <Table data={data} ></Table>
-     {/* <Mytimer></Mytimer> */}
+      {/* <Pagination></Pagination> */}
+     {/* <Table data={data} ></Table> */}
+     <Mytimer></Mytimer>
      {/* <Timer></Timer> */}
      {/* <Todo></Todo> */}
      {/* <List></List> */}
@@ -127,6 +129,6 @@ function App() {
 //       </div>
 //     </div>
 //   );
-// }
+}
 
-// export default App;
+export default App;

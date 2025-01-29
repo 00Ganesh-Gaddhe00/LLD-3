@@ -55,7 +55,7 @@ return `${minutes} : ${seconds} : ${milliseconds}`
 
   return (
     <>
-    <div className='diaplay'>{time()}</div>
+    <div className='display'>{time()}</div>
     <div className='buttons'>
          <button onClick={startfxn} className='button start'>start</button>
          <button onClick={stopfxn} className='button stop'>stop</button>
