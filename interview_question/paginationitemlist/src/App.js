@@ -6,7 +6,7 @@ import Mytimer from './Mytimer';
 import Todo from './todo';
 import List from './transtion';
 import Pagination from './pagination';
-
+import Pagin2 from './pagin2';
 const items = [{id:1, name: 'item1'},
                {id:2, name: 'item2'},
                {id:3, name: 'item3'},
@@ -78,9 +78,10 @@ function App() {
 
   return (
     <div>
+      <Pagin2></Pagin2>
       {/* <Pagination></Pagination> */}
      {/* <Table data={data} ></Table> */}
-     <Mytimer></Mytimer>
+     {/* <Mytimer></Mytimer> */}
      {/* <Timer></Timer> */}
      {/* <Todo></Todo> */}
      {/* <List></List> */}

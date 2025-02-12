@@ -1,0 +1,60 @@
+What is React
+- React is a javascript library created to convieniently and effieciently write code to build website UI, Specifically single page application
+- allows developers to build complex UIs from small, reusable pieces called components.
+- Key features:
+      - component based architecture by braking down user inerface into small reusable components.
+      - Declarative allows developers to describe how the UI should look based on the application's state 
+      - Virtual DOM: a lightweight representation of
+
+How does React work:
+  - we write react code declaratively breaking them into these small UI functional or class component,
+  - currently in functional components the function includes React element, data and logic to describe the element.
+  - we can write the element in the jsx format or js react methods
+  - jsx is transpiled into React js function calls - which return an plane javascript object describe the DOM element based on the functions data
+  - the function return that object to its parent and so on until the last parent is a fed into the react render method 
+  - where react maintains the heirarchy obj represnting the DOM elements which is also called actual virtual DOM and maintians it and updates the actual DOM document.
+  - whenever the state or props change by events the from the event to the down the line heirarachy all the components re-renders or object is created with the update these rerenders are batched whenever there are state change triggered by a single event to effciencecy.
+  - while updating the DOM react compares the current virtual DOM with the old and figure the difference using diffing algorithm and effieciently updating only the changes to the actually DOM using the process called Reconciliation.
+  - the DOM renders the output screen
+
+
+  Hooks : hooks are functions provided by react that are attached/hookinto to functional components to manage/track state updates, lifecycle of the functional component triggering rerenders and other side effects like fetching data or DOM manipulating etc.
+        - Hooks are special functions or methods thats deals with the component data and logic determing the state across lifecycles performing side effects and other react features without the need of class component.
+  
+  in class components the react featues are made available in the component prototype, but for functional components these react features are written in form of seperate methods called hooks
+
+  Custom Hooks: customs hooks are the functions written using react hooks for a specific requirement and functionality following the rules of react hooks enabling reusable, modularity and clean code/maintainability.
+                - e
+                these libraries born out off reusability, modularity, 
+
+useEffect: Hook enable operation to perform not in a normal execution flow or renderlifecycle of the component but as describe,
+ Basically controls the execution of inside function against regular lifecycle
+          - mainly during initial render or when updated/rerenders or when component is removed
+          - takes in a callback function for operating once after the initial render
+          - takes dependency to only update when dependency is updated
+          - takes a return function to operate during components removed
+          - 
+useState = allows functional components to manage state, enabling them 
+
+---------
+
+Memoization is a optimization technique, where the results expensive calculation or function are stored or cached preventing from recomputing on ever renders until
+How Does Memoization Help?
+Reduces unnecessary calculations
+Prevents unwanted re-renders
+Improves performance in large applications
+
+React provides three ways to memoize values, functions, and components:
+- React.memo()
+- useMemo()
+- useCallback()
+
+- React.memo(): is an higher order component takes in the child components only re-renders the child components if the props are changed.
+                - A higher-order component (HOC) that memoizes a React component	Prevents unnecessary re-renders when props haven’t changed	Re-rendering of components
+
+- useMemo: A hook that memoizes the result of an expensive calculation	Avoids recomputation of expensive values unless dependencies change	Recalculation of values
+
+- useCallback()	A hook that memoizes a function instance	Prevents function recreation unless dependencies change	Recreating functions
+
+
+    

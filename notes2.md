@@ -235,7 +235,7 @@ In summary, custom hooks are tailored for use within React components to handle 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Using React hooks comes with a set of rules that are essential to follow to ensure that hooks work correctly. These rules are necessary because hooks rely on the order in which they are called to keep track of state and other React features. Breaking these rules can lead to unexpected behavior and bugs.
-
+                             
 ### Rules for Using React Hooks
 
 1. **Only Call Hooks at the Top Level**
